@@ -8,11 +8,11 @@
                   @csrf
                 <div class="form-group">
                     <label>タイトル</label>
-                    <input type="text" class="form-control" placeholder="タイトルを入力して下さい" name="title">
+                    <input type="text" class="form-control" placeholder="タイトルを入力して下さい" name="name">
                 </div>
                 <div class="form-group">
                     <label>内容</label>
-                    <textarea class="form-control" placeholder="内容" rows="5" maxlength="140" name="body">
+                    <textarea class="form-control" placeholder="内容" rows="5" maxlength="140" name="description"
                     </textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">作成</button>
