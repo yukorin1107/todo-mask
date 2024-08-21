@@ -41,28 +41,37 @@ public function store(Request $request) {
 }
 
 public function edit(Task $task) {
-    return view('tasks.edit', compact('task'));
+    return view('posts.edit', compact('task'));
 }
 
-public function update(Request $request, Task $task) {
+function show ($id) 
+{
+    $task = Task::find($id);
+    return view ('posts.show', compact('task'));
+}
+
+public function update(Request $request, $id) {
     $request->validate([
         'name' => 'required|max:30',
         'description' => 'required|max:140',
         'image' => 'nullable|image|max:2048'
     ]);
 
+    $task = Task::find($id);
+
     $task->name = $request->name;
     $task->description = $request->description;
-    $task->user_id = Auth::id();
+    
 
     if ($request->hasFile('image')) {
         $path = $request->file('image')->store('images', 'public');
         $task->image_path = $path;
     }
 
+    
     $task->save();
 
-    return redirect()->route('tasks.index');
+    return redirect()->route('posts.show');
 }
 
 public function destroy(Task $task) {
