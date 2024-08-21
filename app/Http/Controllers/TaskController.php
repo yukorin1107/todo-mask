@@ -28,6 +28,7 @@ public function store(Request $request) {
     $task = new Task();
     $task->name = $request->name;
     $task->description = $request->description;
+    $task->user_id = Auth::id();
 
     if ($request->hasFile('image')) {
         $path = $request->file('image')->store('images', 'public');
@@ -36,7 +37,7 @@ public function store(Request $request) {
 
     $task->save();
 
-    return redirect()->route('tasks.index');
+    return redirect()->route('posts.index');
 }
 
 public function edit(Task $task) {
@@ -52,6 +53,7 @@ public function update(Request $request, Task $task) {
 
     $task->name = $request->name;
     $task->description = $request->description;
+    $task->user_id = Auth::id();
 
     if ($request->hasFile('image')) {
         $path = $request->file('image')->store('images', 'public');
