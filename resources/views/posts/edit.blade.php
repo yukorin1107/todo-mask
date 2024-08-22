@@ -5,6 +5,7 @@
   <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+          @if (Auth::user()->id == $task->user_id)
             <form action="{{ route('posts.update', $task->id) }}" method="POST">
               @csrf
               @method('put')
@@ -18,6 +19,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary">更新する</button>
             </form>
+            @endif
         </div>
     </div>
   </div>
