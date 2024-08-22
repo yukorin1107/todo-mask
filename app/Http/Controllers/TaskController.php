@@ -76,7 +76,8 @@ public function update(Request $request, $id) {
     return view('posts.show', compact('task'));
 }
 
-public function destroy(Task $task) {
+public function destroy($id) {
+    $task = Task::find($id);
     $task->delete();
     return redirect()->route('posts.index');
 }
