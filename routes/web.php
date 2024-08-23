@@ -3,6 +3,7 @@
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\BookmarkController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +37,7 @@ Route::get('/posts/{id}/edit',[TaskController::class, 'edit'])->name('posts.edit
 Route::put('/posts/{id}',[TaskController::class, 'update'])->name('posts.update');//更新処理
 
 Route::delete('/posts/{id}',[TaskController::class, 'destroy'])->name('posts.destroy');//削除
+
+Route::post('post/{task}/bookmarks',[BookmarkController::class, 'store'])->name('bookmark');
+
+Route::delete('post/{task}/unbookmarks',[BookmarkController::class, 'destroy'])->name('unbookmark');
