@@ -30,13 +30,15 @@ public function store(Request $request) {
     $task->description = $request->description;
     $task->user_id = Auth::id();
 
-    if ($request->hasFile('image')) {
-        $path = $request->file('image')->store('images', 'public');
-        $task->image_path = $path;
+    if(request('image')){
+        $original = request()->file('image')->getClientOriginalName();
+        $name=date('Ymd_His').'_'.$original;
+        request()->file('image')->move('storage/images', $name);
+        $task->image = $name;
     }
 
     $task->save();
-    // dd($task);
+
     return redirect()->route('posts.index');
 }
 

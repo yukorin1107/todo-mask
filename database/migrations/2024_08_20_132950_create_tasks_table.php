@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('image')->nullable(); // 画像（nullableは画像がなくてもOKという意味）
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); // ユーザーID
             $table->timestamps(); // created_at と updated_at
+            $table->string('image')->nullable();
         });
     }
 

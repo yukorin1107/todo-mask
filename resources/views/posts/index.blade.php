@@ -1,3 +1,10 @@
+<style>
+  .thumbnail{
+    width: 100px;
+    height: 100px;
+  }
+</style>
+
 @extends('layouts.app')
 @section('content') 
 
@@ -17,6 +24,11 @@
                 {{-- <p class="card-text">投稿者：{{ $task->user->name }}</p> --}}
                 <a href="{{ route('posts.show', $task->id) }}" class="btn btn-primary">詳細へ</a>
             </div>
+            @if($task->image)
+            <div class="image">
+              <img src="{{ Storage::url('images/' . $task->image) }}" alt="" class="thumbnail">
+            </div>
+            @endif
             <div class="card-footer text-muted">
                 投稿日時 : {{ $task->created_at }}
             </div>
