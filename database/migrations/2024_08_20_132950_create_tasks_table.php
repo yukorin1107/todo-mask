@@ -15,10 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('name'); // タスク名
             $table->text('description'); // 説明
+            $table->string('type'); // このカラムにタスクの種類を保存
             $table->string('image')->nullable(); // 画像（nullableは画像がなくてもOKという意味）
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); // ユーザーID
             $table->timestamps(); // created_at と updated_at
-            $table->string('image')->nullable();
+            
+            //↓なぜ2個あるの？一応コメントアウトしておくね
+            // $table->string('image')->nullable();
         });
     }
 

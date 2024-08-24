@@ -28,5 +28,11 @@ class Task extends Model
     //とりあえずUserとのリレーションは上記に記述があるためなし
 
 
+    //一括代入:複数の属性に対して一度にデータを割り当てる方法
+    //セキュリティリスクが伴うため、$fillableや$guardedを使って安全に管理する必要
+    //$fillable**を設定することで、安全なカラムのみを一括代入可能にすることができる
+    protected $fillable = ['name', 'description', 'type', 'image', 'user_id'];
+
+
 
 }
