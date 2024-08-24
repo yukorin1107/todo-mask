@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('goals', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); // ユーザーID
-            $table->text('goal_body')->nullable(); // 目標の説明
+            $table->text('goal_body'); // 目標の説明
             $table->timestamps();
         });
     }
