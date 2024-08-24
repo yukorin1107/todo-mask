@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\BookmarkController;
 use App\Http\Controllers\NoteController;
-
+use App\Http\Controllers\GoalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,7 +40,8 @@ Route::put('/posts/{id}',[TaskController::class, 'update'])->name('posts.update'
 
 Route::delete('/posts/{id}',[TaskController::class, 'destroy'])->name('posts.destroy');//削除
 
-Route::post('post/{task}/bookmarks',[BookmarkController::class, 'store'])->name('bookmark');
+Route::post('post/{task}/bookmarks',[BookmarkController::class, 'store'])->name('bookmark');//ブックマークをする
+
 
 Route::delete('post/{task}/unbookmarks',[BookmarkController::class, 'destroy'])->name('unbookmark');
 
@@ -50,6 +51,13 @@ Route::get('/notes/create/{task_id}', [NoteController::class, 'create']) -> name
 //メモが保存できるようにstoreアクション
 Route::post('/notes', [NoteController::class, 'store']) -> name('notes.store');
 
-
 // Route::get('/notes', [NoteController::class, 'index'])->name('notes.index');
+
+Route::delete('post/{task}/unbookmarks',[BookmarkController::class, 'destroy'])->name('unbookmark');//ブックマークを外す
+
+Route::get('/goals',[GoalController::class, 'index'])->name('goals.index');//今後はマイページに飛ぶようになる
+
+Route::get('/goals/create',[GoalController::class, 'create'])->name('goals.create');//目標作成
+
+Route::post('/goals',[GoalController::class, 'store'])->name('goals.store');//目標保存
 
