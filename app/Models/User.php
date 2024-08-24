@@ -43,8 +43,21 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    //ブックマークとのリレーション
     public function bookmarks()
     {
         return $this->belongsToMany('App\Task')->withTimestamps();
+    }
+
+    //Noteモデルとのリレーション
+    public function notes()
+    {
+        return $this -> hasMany('App\Models\Note');
+    }
+
+    //taskモデルとのリレーション
+    public function tasks()
+    {
+        return $this -> hasMany('App\Models\Task');
     }
 }

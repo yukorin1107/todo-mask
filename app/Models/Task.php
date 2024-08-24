@@ -18,4 +18,15 @@ class Task extends Model
     {
         return $this->belongsToMany('App\Models\User')->withTimestamps();
     }
+
+    //Noteモデルとのリレーション
+    public function notes()
+    {
+        return $this -> hasMany('App\Models\Note');
+    }
+
+    //とりあえずUserとのリレーションは上記に記述があるためなし
+
+
+
 }
