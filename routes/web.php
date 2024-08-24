@@ -61,5 +61,7 @@ Route::get('/goals/create',[GoalController::class, 'create'])->name('goals.creat
 
 Route::post('/goals',[GoalController::class, 'store'])->name('goals.store');//目標保存
 
+Route::get('/goals/{id}/edit',[GoalController::class, 'edit'])->name('goals.edit');//目標編集
+
 Route::get('/first/create',[FirstTaskController::class, 'create'])->name('first.create');//最初の投稿
 

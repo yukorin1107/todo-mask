@@ -51,9 +51,10 @@ class GoalController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $goal = Goal::find($id);
+        return view('goals.edit', ['goal' => $goal]);
     }
 
     /**
