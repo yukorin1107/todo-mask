@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Goal;
+use Illuminate\Support\Facades\Auth;
 
 class GoalController extends Controller
 {
@@ -11,7 +13,8 @@ class GoalController extends Controller
      */
     public function index()
     {
-        //
+        $goals = Goal::all();
+        return view('goals.index', compact('goals'));
     }
 
     /**
@@ -19,7 +22,7 @@ class GoalController extends Controller
      */
     public function create()
     {
-        //
+        return view('goals.create');
     }
 
     /**
@@ -27,7 +30,14 @@ class GoalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $goal = new Goal();
+
+        $goal->goal_body = $request->goal_body;
+        $goal->user_id = Auth::id();
+
+        $goal->save();
+
+        return redirect()->route('posts.index');
     }
 
     /**
