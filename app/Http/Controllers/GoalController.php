@@ -37,7 +37,7 @@ class GoalController extends Controller
 
         $goal->save();
 
-        return redirect()->route('posts.index');
+        return redirect()->route('first.create');
     }
 
     /**

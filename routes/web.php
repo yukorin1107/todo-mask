@@ -4,6 +4,7 @@ use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\BookmarkController;
+use App\Http\Controllers\FirstTaskController;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\GoalController;
 
@@ -42,7 +43,6 @@ Route::delete('/posts/{id}',[TaskController::class, 'destroy'])->name('posts.des
 
 Route::post('post/{task}/bookmarks',[BookmarkController::class, 'store'])->name('bookmark');//ブックマークをする
 
-
 Route::delete('post/{task}/unbookmarks',[BookmarkController::class, 'destroy'])->name('unbookmark');
 
 //メモが作成できるようにcreateアクション
@@ -60,4 +60,6 @@ Route::get('/goals',[GoalController::class, 'index'])->name('goals.index');//今
 Route::get('/goals/create',[GoalController::class, 'create'])->name('goals.create');//目標作成
 
 Route::post('/goals',[GoalController::class, 'store'])->name('goals.store');//目標保存
+
+Route::get('/first/create',[FirstTaskController::class, 'create'])->name('first.create');//最初の投稿
 
