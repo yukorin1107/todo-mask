@@ -1,9 +1,12 @@
 @extends('layouts.app')
 @section('content')
-    
+
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <div>
+                <h1>早速タスクを入力してみよう</h1>
+            </div>
             <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
@@ -20,8 +23,6 @@
                     <input type="file" class="form-control-file" name='image' id='image'>
                 </div>
                 <button type="submit" class="btn btn-primary">作成</button>
-                
-
             </form>
         </div>
     </div>
