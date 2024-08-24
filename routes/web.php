@@ -4,6 +4,8 @@ use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\BookmarkController;
+use App\Http\Controllers\NoteController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +43,13 @@ Route::delete('/posts/{id}',[TaskController::class, 'destroy'])->name('posts.des
 Route::post('post/{task}/bookmarks',[BookmarkController::class, 'store'])->name('bookmark');
 
 Route::delete('post/{task}/unbookmarks',[BookmarkController::class, 'destroy'])->name('unbookmark');
+
+//メモが作成できるようにcreateアクション
+Route::get('/notes/create/{task_id}', [NoteController::class, 'create']) -> name('notes.create');
+
+//メモが保存できるようにstoreアクション
+Route::post('/notes', [NoteController::class, 'store']) -> name('notes.store');
+
+
+// Route::get('/notes', [NoteController::class, 'index'])->name('notes.index');
+

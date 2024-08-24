@@ -25,21 +25,21 @@
       </div>
       <div class="row justify-content-center">
         <div class="col-md-8">
-                {{-- <button type="button" class="btn btn-primary" onclick="window.location='{{ route('comments.create', $task->id) }}'">コメントする</button> --}}
+                <button type="button" class="btn btn-primary" onclick="window.location='{{ route('notes.create', $task->id) }}'">メモを追加</button>
         </div>
       </div>
       <div class="row justify-content-center">
         <div class="col-md-8 mt-5">
-          コメント一覧
-          {{-- @foreach($task->comments as $comment)
+          メモ一覧
+          @foreach($task->notes as $note)
             <div class="card mt-3">
-                <h5 class="card-header">投稿者：{{ $comment->user->name }}</h5>
+                <h5 class="card-header">投稿者：{{ $note->user->name }}</h5>
                 <div class="card-body">
-                    <h5 class="card-title">投稿日時：{{ $comment->created_at }}</h5>
-                    <p class="card-text">内容：{{ $comment->body }}</p>
+                    <h5 class="card-title">投稿日時：{{ $note->created_at }}</h5>
+                    <p class="card-text">内容：{{ $note->body }}</p>
                 </div>
             </div>
-          @endforeach --}}
+          @endforeach
         </div>
       </div>
   </div>
