@@ -14,7 +14,9 @@ class MypageController extends Controller
     // $loginStreak = LoginStreak::where('user_id', Auth::id())->first()->streak ?? 0;
     // $studyTime = StudyTime::where('user_id', Auth::id())->sum('time_spent');
 
-    return view('mypages', compact('goals', 'loginStreak', 'studyTime'));
+    return view('mypages.mypage', compact('goals'));
 }
+
+
 
 }

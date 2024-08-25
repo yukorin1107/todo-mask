@@ -16,24 +16,26 @@
         <ul>
             @foreach($goals as $goal)
                 <li>
-                    <a href="{{ route('goals.show', $goal->id) }}">{{ $goal->goal_body }}</a>
-                    <a href="{{ route('goals.edit', $goal->id) }}" class="btn btn-secondary">Edit</a>
-                    <form action="{{ route('goals.destroy', $goal->id) }}" method="POST" style="display:inline;">
+                    {{-- <a href="{{ route('goals.show', $goal->id) }}">{{ $goal->goal_body }}</a> --}}
+                    <p>目標: {{ $goal->goal_body }}</p>
+                    {{-- <a href="{{ route('goals.edit', $goal->id) }}" class="btn btn-secondary">Edit</a> --}}
+                    <p>Edit</p>
+                    {{-- <form action="{{ route('goals.destroy', $goal->id) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
+                    </form> --}}
                 </li>
             @endforeach
         </ul>
     </div>
 
     <div class="login-streak">
-        <h2>Consecutive Login Days: {{ $loginStreak }}</h2>
+        <h2>Consecutive Login Days: # </h2>
     </div>
 
     <div class="study-time">
-        <h2>Study Time: {{ $studyTime }} hours</h2>
+        <h2>Study Time: # hours</h2>
     </div>
 </div>
 @endsection
