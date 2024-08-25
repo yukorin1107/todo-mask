@@ -41,7 +41,7 @@ class GoalController extends Controller
         $goal->save();
 
         // return redirect()->route('first.create');
-        return redirect()->route('mypage');
+        return redirect()->route('mypages.mypage');
     }
 
     public function showMypage()
