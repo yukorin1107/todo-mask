@@ -33,15 +33,14 @@ class GoalController extends Controller
         $request->validate([
             'goal_body' => 'required|string|max:255',
         ]);
-    
+ 
         $goal = new Goal();
 
         $goal->goal_body = $request->goal_body;
         $goal->user_id = Auth::id();
         $goal->save();
 
-        // return redirect()->route('first.create');
-        return redirect()->route('mypages.mypage');
+        return redirect()->route('FirstTask.create');
     }
 
     public function showMypage()
