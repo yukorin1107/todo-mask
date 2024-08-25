@@ -22,12 +22,14 @@ public function store(Request $request) {
     $request->validate([
         'name' => 'required|max:30',
         'description' => 'required|max:140',
+        'type' => 'required|string|in:Reading,Listening,Speaking,Writing,Vocabulary', // typeのバリデーションを追加
         'image' => 'nullable|image|max:2048'
     ]);
 
     $task = new Task();
     $task->name = $request->name;
     $task->description = $request->description;
+    $task->type = $request->type; // typeを追加
     $task->user_id = Auth::id();
 
     if(request('image')){
