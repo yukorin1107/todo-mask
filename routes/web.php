@@ -7,6 +7,7 @@ use App\Http\Controllers\BookmarkController;
 use App\Http\Controllers\FirstTaskController;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\GoalController;
+use App\Http\Controllers\MypageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,3 +64,4 @@ Route::post('/goals',[GoalController::class, 'store'])->name('goals.store');//�
 
 Route::get('/first/create',[FirstTaskController::class, 'create'])->name('first.create');//最初の投稿
 
+Route::get('/mypages', [MypageController::class, 'index'])->name('mypages.mypage');
