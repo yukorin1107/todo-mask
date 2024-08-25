@@ -8,7 +8,7 @@ use App\Http\Controllers\FirstTaskController;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\GoalController;
 use App\Http\Controllers\MypageController;
-
+use App\Http\Controllers\StudyTimeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -64,6 +64,10 @@ Route::post('/goals',[GoalController::class, 'store'])->name('goals.store');//�
 
 Route::get('/goals/{id}/edit',[GoalController::class, 'edit'])->name('goals.edit');//目標編集
 
-Route::get('/first/create',[FirstTaskController::class, 'create'])->name('first.create');//最初の投稿
+Route::get('/FirstTask/create',[FirstTaskController::class, 'create'])->name('FirstTask.create');//最初の投稿
 
 Route::get('/mypages', [MypageController::class, 'index'])->name('mypages.mypage');
+
+Route::get('/StudyTime/create',[StudyTimeController::class, 'create'])->name('StudyTime.create');//勉強時間の作成
+
+Route::post('/StudyTime',[StudyTimeController::class, 'store'])->name('StudyTime.store');//勉強時間の保存

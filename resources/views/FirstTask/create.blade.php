@@ -19,6 +19,17 @@
                     </textarea>
                 </div>
                 <div class="form-group">
+                    <label for="type">タスクの種類</label>
+                    <select name="type" id="type" class="form-control" required>
+                        <option value="" disabled selected>タスクの種類を選んでください</option>
+                        <option value="Reading">Reading</option>
+                        <option value="Listening">Listening</option>
+                        <option value="Speaking">Speaking</option>
+                        <option value="Writing">Writing</option>
+                        <option value="Vocabulary">Vocabulary</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="image">画像登録</label>
                     <input type="file" class="form-control-file" name='image' id='image'>
                 </div>

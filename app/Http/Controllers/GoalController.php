@@ -30,6 +30,10 @@ class GoalController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'goal_body' => 'required|string',
+        ]);
+        
         $goal = new Goal();
 
         $goal->goal_body = $request->goal_body;
@@ -37,7 +41,7 @@ class GoalController extends Controller
 
         $goal->save();
 
-        return redirect()->route('first.create');
+        return redirect()->route('FirstTask.create');
     }
 
     /**
