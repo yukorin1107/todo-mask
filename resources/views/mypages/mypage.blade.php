@@ -12,14 +12,12 @@
 
     <div class="goals">
         <h2>Your Goals</h2>
-        <a href="{{ route('goals.create') }}" class="btn btn-primary">Create New Goal</a>
         <ul>
             @foreach($goals as $goal)
                 <li>
                     {{-- <a href="{{ route('goals.show', $goal->id) }}">{{ $goal->goal_body }}</a> --}}
                     <p>目標: {{ $goal->goal_body }}</p>
-                    {{-- <a href="{{ route('goals.edit', $goal->id) }}" class="btn btn-secondary">Edit</a> --}}
-                    <p>Edit</p>
+                    <a href="{{ route('goals.edit', $goal->id) }}" class="btn btn-secondary">Edit</a>
                     {{-- <form action="{{ route('goals.destroy', $goal->id) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
