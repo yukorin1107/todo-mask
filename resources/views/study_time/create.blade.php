@@ -15,6 +15,7 @@
             <label>日付</label>
             <input type="date" name="date" required>
         </div>
+        
         <button type="submit">OK</button>
     </form>
 </div>

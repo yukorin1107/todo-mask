@@ -71,3 +71,5 @@ Route::get('/mypages', [MypageController::class, 'index'])->name('mypages.mypage
 Route::get('/StudyTime/create',[StudyTimeController::class, 'create'])->name('StudyTime.create');//勉強時間の作成
 
 Route::post('/StudyTime',[StudyTimeController::class, 'store'])->name('StudyTime.store');//勉強時間の保存
+
+Route::get('/Complete', [TaskController::class, 'completedTasks'])->name('Complete.index');
