@@ -13,7 +13,7 @@ class GoalController extends Controller
      */
     public function index()
     {
-        $goals = Goal::all();
+        $goals = Goal::where('user_id', Auth::id())->get();
         return view('goals.index', compact('goals'));
     }
 
@@ -30,22 +30,27 @@ class GoalController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'goal_body' => 'required|string|max:255',
+        ]);
+    
         $goal = new Goal();
 
         $goal->goal_body = $request->goal_body;
         $goal->user_id = Auth::id();
-
         $goal->save();
 
-        return redirect()->route('first.create');
+        // return redirect()->route('first.create');
+        return redirect()->route('mypage');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function showMypage()
     {
-        //
+    // ログインしているユーザーの目標を1つ取得
+    $goal = Goal::where('user_id', Auth::id())->latest()->first();
+
+    // mypage.blade.php というビューを表示し、そこに目標データを渡す
+    return view('mypage', compact('goal'));
     }
 
     /**
@@ -60,16 +65,25 @@ class GoalController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        // $request->validate([
+        //     'goal_body' => 'required|string|max:255',
+        // ]);
+
+        $goal =Goal::find($id);
+
+        $goal -> goal_body = $request ->goal_body;
+        $goal -> save();
+
+        return redirect()->route('mypages.mypage');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        //
-    }
+    // public function destroy(string $id)
+    // {
+    //     //
+    // }
 }

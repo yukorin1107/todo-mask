@@ -14,7 +14,7 @@ use App\Http\Controllers\MypageController;
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
+| Here is where you can register web routmessage:%3C252726B6-5F23-4467-A1DB-202D8DD107BC@gmail.com%3Ees for your application. These
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
@@ -63,6 +63,8 @@ Route::get('/goals/create',[GoalController::class, 'create'])->name('goals.creat
 Route::post('/goals',[GoalController::class, 'store'])->name('goals.store');//目標保存
 
 Route::get('/goals/{id}/edit',[GoalController::class, 'edit'])->name('goals.edit');//目標編集
+
+Route::put('/goals/{id}',[GoalController::class, 'update'])->name('goals.update');//目標更新処理
 
 Route::get('/first/create',[FirstTaskController::class, 'create'])->name('first.create');//最初の投稿
 
