@@ -11,6 +11,8 @@ class TaskController extends Controller
 {
     public function index() {
         $tasks = Task::all();
+        // ユーザーの未完了タスクを取得
+        $tasks = Task::where('user_id', Auth::id())->where('is_completed', false)->get();
         return view('posts.index', compact('tasks'));
 }
     
@@ -85,4 +87,11 @@ public function destroy($id) {
     $task->delete();
     return redirect()->route('posts.index');
 }
+
+public function completedTasks()
+{
+    $completedTasks = Task::where('user_id', Auth::id())->where('is_completed', true)->get();
+    return view('Complete.index', compact('completedTasks'));
+}
+
 }

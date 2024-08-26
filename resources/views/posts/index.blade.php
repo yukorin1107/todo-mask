@@ -37,7 +37,7 @@
                       <button type="submit" class="btn btn-success">ブックマークする</button>
                     </form>
                   @endif
-                  <a href="{{ route('StudyTime.create') }}" class="btn btn-primary">完</a>
+                  <a href="{{ route('StudyTime.create', ['task_id' => $task->id]) }}" class="btn btn-primary">完</a>
                   @if($task->image)
                     <div class="image mt-3">
                       <img src="{{ Storage::url('images/' . $task->image) }}" alt="" class="thumbnail">
