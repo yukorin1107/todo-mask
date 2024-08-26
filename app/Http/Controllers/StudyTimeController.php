@@ -9,35 +9,41 @@ use App\Models\Task;
 
 class StudyTimeController extends Controller
 {
-    public function create()
-    {
-        // ユーザーの未完了タスクを取得
-        $tasks = Task::where('user_id', Auth::id())->where('is_completed', false)->get();
-        return view('study_time.create', compact('tasks'));
-    }
+    public function create(Request $request)
+{
+    $taskId = $request->query('task_id');
+    return view('study_time.create', compact('taskId'));
+}
+
 
     public function store(Request $request)
     {
         $StudyTime = new StudyTime();
-        
         $StudyTime->Study_time = $request->StudyTime;
         $StudyTime->date = $request->date;
         $StudyTime->user_id = Auth::id();
-
         $StudyTime->save();
 
-        Task::where('is_completed', false)->update(['is_completed' => true]);
-        
-          // フォームから送信されたタスクIDを取得
-        // $taskId = $request->task_id;
-        // $task = Task::find($taskId);
-
-        // if($task){
-        //     $task->is_completed = true;
-        //     $task->save();
-        // }
+        $taskId = $request->input('task_id');
+        $task = Task::where('id', $taskId)->where('user_id', Auth::id())->first();
+    
+        if ($task) {
+            $task->is_completed = true;
+            $task->save();
+        }
 
         return redirect()->route('posts.index');
     }
+
+    // private function shouldCompleteTask(Task $task, StudyTime $studyTime)
+    // {
+    //     タスク完了の条件を定義
+    //     例: 勉強時間が0.1時間以上であれば完了とする
+    //     if ($studyTime->Study_time >= 0.1) {
+    //         return true;
+    //     }
+        
+    //     return false;
+    // }
 }
 

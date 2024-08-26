@@ -90,7 +90,8 @@ public function destroy($id) {
 
 public function completedTasks()
 {
-    $completedTasks = Task::where('is_completed', true)->get();
-    return view('complete.index', compact('completedTasks'));
+    $completedTasks = Task::where('user_id', Auth::id())->where('is_completed', true)->get();
+    return view('Complete.index', compact('completedTasks'));
 }
+
 }
