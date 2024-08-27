@@ -72,12 +72,15 @@
                               <form action="{{ route('unbookmark', $task) }}" method="POST" style="display:inline;">
                                   @csrf
                                   @method('DELETE')
-                                  <button type="submit" class="btn btn-warning">ブックマーク解除</button>
+                                  {{-- ブックマーク解除 --}}
+                                  <button type="submit" class=""><img src="{{ asset('img/Post.index/star.black.png') }}" alt=""></button>
+                                  <a href="{{ route('StudyTime.create', ['task_id' => $task->id]) }}" class="btn btn-primary">完</a>
                               </form>
                               @else
                               <form action="{{ route('bookmark', $task) }}" method="POST" style="display:inline;">
                                   @csrf
-                                  <button type="submit" class="btn btn-success">ブックマークする</button>
+                                  {{-- ブックマークする --}}
+                                  <button type="submit" class=""><img src="{{ asset('img/Post.index/star.red.png') }}" alt=""></button>
                                   <a href="{{ route('StudyTime.create', ['task_id' => $task->id]) }}" class="btn btn-primary">完</a>
                               </form>
                               @endif
