@@ -78,6 +78,7 @@
                               <form action="{{ route('bookmark', $task) }}" method="POST" style="display:inline;">
                                   @csrf
                                   <button type="submit" class="btn btn-success">ブックマークする</button>
+                                  <a href="{{ route('StudyTime.create', ['task_id' => $task->id]) }}" class="btn btn-primary">完</a>
                               </form>
                               @endif
           
@@ -96,9 +97,6 @@
               </div>
               @endforeach
           </div>
-          
-          
-          
           </div>
         </div>
       </div>
