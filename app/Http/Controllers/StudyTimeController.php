@@ -23,7 +23,6 @@ class StudyTimeController extends Controller
 
         $StudyTime->save();
 
-
         return redirect()->route('posts.index')->with('success', '学習時間が記録されました。');
 
     }
