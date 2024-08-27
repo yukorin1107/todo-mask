@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "鉄瓶ゴシック";
+    src: url('https://cdn.leafscape.be/tetsubin/tetsubin_web.woff2') format("woff2");
+}
+
+
+* {
+    font-family: "鉄瓶ゴシック", sans-serif; /* フォントファミリーを設定 */
+}
+
+body {
+    background-image: url(../img/toppage/todo-background.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

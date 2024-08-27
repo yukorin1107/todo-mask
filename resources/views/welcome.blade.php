@@ -29,7 +29,7 @@
 
                 <div id="title">
                     {{-- <h1> 英語学習のための <br> タスク管理帳 </h1>    --}}
-                    <h1>MASK TASK</h1>
+                    <h1>ENGLISH TASKS</h1>
                     <p> Todo list for studying English</p>
                 </div>
 
