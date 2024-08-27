@@ -31,20 +31,14 @@
     </div>
 
     <div class="login-streak">
-<<<<<<< Updated upstream
+
         <h2>連続ログイン履歴 ▷▶︎▷ # 日</h2> 
     </div> 
 
     <div class="study-time">
         <h2>合計学習時間 ▷▶︎▷ {{ $StudyTime }} 時間</h2>
 
-=======
-        <h2>連続ログイン日数: # </h2>
-    </div>
 
-    <div class="study-time">
-        <h2>学習時間の合計: # hours</h2>
->>>>>>> Stashed changes
     </div>
 </div>
 @endsection
