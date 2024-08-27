@@ -58,7 +58,6 @@ public function edit($id) {
 }
 
 public function update(Request $request, $id) {
-
     $request->validate([
         'name' => 'required|max:30',
         'description' => 'required|max:140',
@@ -70,13 +69,15 @@ public function update(Request $request, $id) {
     
     $task->name = $request->name;
     $task->description = $request->description;
-
-    if ($request->hasFile('image')) {
-        $path = $request->file('image')->store('images', 'public');
-        $task->image_path = $path;
+    $task->type = $request->type;
+    
+    if(request('image')){
+        $original = request()->file('image')->getClientOriginalName();
+        $name=date('Ymd_His').'_'.$original;
+        request()->file('image')->move('storage/images', $name);
+        $task->image = $name;
     }
 
-    
     $task->save();
 
     return view('posts.show', compact('task'));
