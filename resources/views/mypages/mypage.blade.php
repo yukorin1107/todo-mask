@@ -32,7 +32,7 @@
 
     <div class="login-streak">
 
-        <h2>連続ログイン履歴 ▷▶︎▷ # 日</h2> 
+        <h2>連続ログイン履歴 ▷▶︎▷ {{ $consecutiveLoginDays }} 日</h2> 
     </div> 
 
     <div class="study-time">

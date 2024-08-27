@@ -83,5 +83,7 @@ Route::get('/StudyTime/create',[StudyTimeController::class, 'create'])->name('St
 
 Route::post('/StudyTime',[StudyTimeController::class, 'store'])->name('StudyTime.store');//勉強時間の保存
 
+
 Route::get('/Complete', [TaskController::class, 'completedTasks'])->name('Complete.index'); //完了タスク一覧画面
+
 
