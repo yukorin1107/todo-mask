@@ -103,11 +103,19 @@
           </div>
         </div>
       </div>
-      <div class="col-md-2">
-        <a href="{{ route('posts.create') }}" class="btn btn-primary">
-          新規投稿
+      <div class="col-md-12">
+        <!-- マイページボタン（右上） -->
+        <a href="{{ route('mypages.mypage') }}" class="btn btn-primary" style="position: fixed; top: 140px; right: 290px;">
+            マイページへ
         </a>
-      </div>
+        <a href="{{ route('Complete.index') }}" class="btn btn-primary" style="position: fixed; bottom: 10px; left: 250px;">
+          完了一覧画面へ
+        </a>
+        <!-- 新規投稿ボタン（右下） -->
+        <a href="{{ route('posts.create') }}" class="btn btn-primary" style="position: fixed; bottom: 10px; right: 290px;">
+            新規投稿
+        </a>
+    </div>
     </div>
   </div>
 @endsection
