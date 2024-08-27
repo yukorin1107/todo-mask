@@ -75,3 +75,5 @@ Route::get('/StudyTime/create',[StudyTimeController::class, 'create'])->name('St
 Route::post('/StudyTime',[StudyTimeController::class, 'store'])->name('StudyTime.store');//勉強時間の保存
 
 Route::get('/Complete', [TaskController::class, 'completedTasks'])->name('Complete.index');
+
+Route::post('/mypages/profile-image', [MypageController::class, 'updateProfileImage'])->name('profile.image.update');

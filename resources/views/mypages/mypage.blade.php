@@ -10,6 +10,19 @@
         @include('partials.calendar')
     </div> --}}
 
+    <div class="profile-image">
+        <img src="{{ Auth::user()->profile_image ? asset('images/' . Auth::user()->profile_image) : asset('img/mypage/default-profile.png') }}" alt="プロフィール画像" style="width:150px; height:150px; border-radius:50%;">
+    </div>
+
+    <form action="{{ route('profile.image.update') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <div class="form-group">
+            <label for="profile_image">プロフィール画像を変更する</label>
+            <input type="file" class="form-control-file" id="profile_image" name="profile_image">
+        </div>
+        <button type="submit" class="btn btn-primary">更新する</button>
+    </form>
+
     <div class="goals">
         <h2>学習目標</h2>
         <ul>
