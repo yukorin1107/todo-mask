@@ -11,7 +11,7 @@
     </div> --}}
 
     <div class="goals">
-        <h2>Your Goals</h2>
+        <h2>学習目標</h2>
         <ul>
             @foreach($goals as $goal)
                 <li>
@@ -29,11 +29,12 @@
     </div>
 
     <div class="login-streak">
-        <h2>Consecutive Login Days: # </h2>
-    </div>
+        <h2>連続ログイン履歴 ▷▶︎▷ # 日</h2> 
+    </div> 
 
     <div class="study-time">
-        <h2>Study Time: # hours</h2>
+        <h2>合計学習時間 ▷▶︎▷ {{ $StudyTime }} 時間</h2>
+
     </div>
 </div>
 @endsection

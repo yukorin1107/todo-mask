@@ -17,13 +17,13 @@ class StudyTimeController extends Controller
     {
         $StudyTime = new StudyTime();
         
-        $StudyTime->Study_time = $request->StudyTime;
+        $StudyTime->study_time = $request->StudyTime;
         $StudyTime->date = $request->date;
         $StudyTime->user_id = Auth::id();
 
         $StudyTime->save();
 
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.index')->with('success', '学習時間が記録されました。');
     }
 }
 
