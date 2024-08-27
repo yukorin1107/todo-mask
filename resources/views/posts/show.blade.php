@@ -10,13 +10,15 @@
                   </div>
                   <div class="card-body">
                   <p class="card-text">内容：{{ $task->description }}</p>
-                  <p>投稿日時：{{ $task->created_at }}</p>
+                  <p>投稿日時：{{ $task->created_at }}</p> 
+
                   {{-- <a href="{{ route('posts.edit',$task->id) }}" class="btn btn-primary">編集する</a> --}}
 
                   <!-- Button trigger modal -->
+
                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Edit
-                  </button>
+                  </button> 
 
                   <!-- Modal -->
                   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -31,7 +33,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-md-8">
                                   @if (Auth::user()->id == $task->user_id)
-                                    <form action="{{ route('posts.update', $task->id) }}" method="POST">
+                                    <form action="{{ route('posts.update', $task->id) }}" method="POST" enctype="multipart/form-data">
                                       @csrf
                                       @method('put')
                                         <div class="form-group">
@@ -42,6 +44,22 @@
                                             <label>内容</label>
                                             <textarea class="form-control" rows="5" name="description">{{ $task->description }}</textarea>
                                         </div>
+                                        <div class="form-group">
+                                          <label for="type">タスクの種類</label>
+                                          <select name="type" id="type" class="form-control" required>
+                                              <option value="" disabled selected>タスクの種類を選んでください</option>
+                                              <option value="Reading">Reading</option>
+                                              <option value="Listening">Listening</option>
+                                              <option value="Speaking">Speaking</option>
+                                              <option value="Writing">Writing</option>
+                                              <option value="Vocabulary">Vocabulary</option>
+                                          </select>
+                                      </div> 
+                      
+                                      <div class="form-group">
+                                          <label for="image">画像登録</label>
+                                          <input type="file" class="form-control-file" name='image' id='image'>
+                                      </div>
                                         <button type="submit" class="btn btn-primary">更新する</button>
                                     </form>
                                     @endif
@@ -49,10 +67,6 @@
                             </div>
                           </div>
                         </div>
-                        {{-- <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary">Save changes</button>
-                        </div> --}}
                       </div>
                     </div>
                   </div>
@@ -85,7 +99,7 @@
             </div>
           @endforeach
         </div>
-      </div>
+      </div> 
   </div>
 
-@endsection
+@endsection 
