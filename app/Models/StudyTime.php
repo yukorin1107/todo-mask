@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class StudyTime extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['user_id', 'study_time', 'date'];
 }
