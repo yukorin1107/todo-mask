@@ -2,7 +2,7 @@
 @section('content') 
 
 <div>
-    <h1>勉強時間を入力してください</h1>
+    <h1>学習時間の記録</h1>
 </div>
 <div>
     <form action="{{ route('StudyTime.store') }}" method="POST">

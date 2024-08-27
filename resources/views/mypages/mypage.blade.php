@@ -15,8 +15,10 @@
         <ul>
             @foreach($goals as $goal)
                 <li>
-                    {{-- <a href="{{ route('goals.show', $goal->id) }}">{{ $goal->goal_body }}</a> --}}
+                    {{-- <a href="{{ roωte('goals.show', $goal->id) }}">{{ $goal->goal_body }}</a> --}}
                     <p>目標: {{ $goal->goal_body }}</p>
+                    {{-- <p>作成時間: {{ $goal->created_at }}</p> --}}
+
                     <a href="{{ route('goals.edit', $goal->id) }}" class="btn btn-secondary">Edit</a>
                     {{-- <form action="{{ route('goals.destroy', $goal->id) }}" method="POST" style="display:inline;">
                         @csrf
@@ -29,12 +31,20 @@
     </div>
 
     <div class="login-streak">
+<<<<<<< Updated upstream
         <h2>連続ログイン履歴 ▷▶︎▷ # 日</h2> 
     </div> 
 
     <div class="study-time">
         <h2>合計学習時間 ▷▶︎▷ {{ $StudyTime }} 時間</h2>
 
+=======
+        <h2>連続ログイン日数: # </h2>
+    </div>
+
+    <div class="study-time">
+        <h2>学習時間の合計: # hours</h2>
+>>>>>>> Stashed changes
     </div>
 </div>
 @endsection
