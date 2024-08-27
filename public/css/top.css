@@ -1,6 +1,12 @@
+@font-face {
+    font-family: "鉄瓶ゴシック";
+    src: url('https://cdn.leafscape.be/tetsubin/tetsubin_web.woff2') format("woff2");
+}
+
+
 * {
-    padding: 0;
-    margin: 0;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 .back-img {
@@ -9,4 +15,41 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+
+#letters {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100vh; /* Ensure it takes full screen height */
+    text-align: center;
+    font-family: "鉄瓶ゴシック", sans-serif; /* フォントファミリーを設定 */
+}
+
+#title h1{
+    font-size: 30px;
+}
+
+
+.auth-button {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+
+.button-design{
+    background-color: #f8f9fa; 
+    padding: 10px !important; 
+    margin: 15px 5px !important;
+    border: 5px solid lightsteelblue !important; 
+}
+
+.button-design:hover {
+    background-color: lightsteelblue; 
+    color: white;
+}
+
 
