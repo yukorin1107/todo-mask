@@ -12,22 +12,28 @@
 
     <div class="goals">
         <h2>学習目標</h2>
-        <ul>
+
+        <p>目標: {{ $goal->goal_body }}</p>
+        <a href="{{ route('goalsprofile.edit', $goal->id) }}" class="btn btn-secondary">Edit</a>
+        
+        {{-- <ul>
             @foreach($goals as $goal)
                 <li>
-                    {{-- <a href="{{ roωte('goals.show', $goal->id) }}">{{ $goal->goal_body }}</a> --}}
                     <p>目標: {{ $goal->goal_body }}</p>
+                    <a href="{{ route('goalsprofile.edit', $goal->id) }}" class="btn btn-secondary">Edit</a>
+
+                    {{-- <a href="{{ roωte('goals.show', $goal->id) }}">{{ $goal->goal_body }}</a> --}}
                     {{-- <p>作成時間: {{ $goal->created_at }}</p> --}}
 
-                    <a href="{{ route('goalsprofile.edit', $goal->id) }}" class="btn btn-secondary">Edit</a>
                     {{-- <form action="{{ route('goals.destroy', $goal->id) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form> --}}
-                </li>
+                {{-- </li>
             @endforeach
-        </ul>
+        </ul>  --}}
+        
     </div>
 
     <div class="login-streak">
