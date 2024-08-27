@@ -19,10 +19,12 @@ class StudyTimeController extends Controller
     public function store(Request $request)
     {
         $StudyTime = new StudyTime();
-        $StudyTime->Study_time = $request->StudyTime;
+        
+        $StudyTime->study_time = $request->StudyTime;
         $StudyTime->date = $request->date;
         $StudyTime->user_id = Auth::id();
         $StudyTime->save();
+
 
         $taskId = $request->input('task_id');
         $task = Task::where('id', $taskId)->where('user_id', Auth::id())->first();
@@ -32,7 +34,9 @@ class StudyTimeController extends Controller
             $task->save();
         }
 
-        return redirect()->route('posts.index');
+
+        return redirect()->route('posts.index')->with('success', '学習時間が記録されました。');
+
     }
 
     // private function shouldCompleteTask(Task $task, StudyTime $studyTime)

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <!-- ユーザーがこの目標を編集できるか確認 -->
-            @if (Auth::user()->id == $goal->user_id)
+            @if (Auth::user()->id === $goal->user_id)
                 <h1>新しい目標は何にしますか？</h1>
                 
                 <!-- フォームの開始 -->
@@ -15,7 +15,9 @@
 
                     <div class="form-group">
                         <label for="goal_body">目標</label>
-                        <input type="text" id="goal_body" name="goal_body" class="form-control" placeholder="目標を記入してください" value="{{ old('goal_body', $goal->goal_body) }}">
+                        <input type="text" id="goal_body" name="goal_body" class="form-control" placeholder="目標を記入してください" 
+                        value="{{ old('goal_body', $goal->goal_body) }}"
+                        >
                         @error('goal_body')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
