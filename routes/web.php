@@ -56,15 +56,24 @@ Route::post('/notes', [NoteController::class, 'store']) -> name('notes.store');
 
 Route::delete('post/{task}/unbookmarks',[BookmarkController::class, 'destroy'])->name('unbookmark');//ブックマークを外す
 
-Route::get('/goals',[GoalController::class, 'index'])->name('goals.index');//今後はマイページに飛ぶようになる
+// Route::get('/goals',[GoalController::class, 'index'])->name('goals.index'); //今後はマイページに飛ぶようになる
 
 Route::get('/goals/create',[GoalController::class, 'create'])->name('goals.create');//目標作成
 
 Route::post('/goals',[GoalController::class, 'store'])->name('goals.store');//目標保存
 
 Route::get('/goals/{id}/edit',[GoalController::class, 'edit'])->name('goals.edit');//目標編集
+Route::get('/goals/{id}/edit-goal',[GoalController::class, 'editGoalProfile'])->name('goalsprofile.edit');//目標編集
 
 Route::put('/goals/{id}',[GoalController::class, 'update'])->name('goals.update');//目標更新処理
+Route::put('/goal/{id}',[GoalController::class, 'updateGoalProfile'])->name('goalsprofile.update');//目標更新処理
+
+
+Route::get('/goals/{id}/confirmation', [GoalController::class, 'confirmation']) -> name('goals.confirmation'); //目標確認画面
+
+Route::get('/goals', function() {
+    return redirect()->route('goals.confirmation');
+});
 
 Route::get('/FirstTask/create',[FirstTaskController::class, 'create'])->name('FirstTask.create');//最初の投稿
 
@@ -74,5 +83,7 @@ Route::get('/StudyTime/create',[StudyTimeController::class, 'create'])->name('St
 
 Route::post('/StudyTime',[StudyTimeController::class, 'store'])->name('StudyTime.store');//勉強時間の保存
 
-Route::get('/Complete', [TaskController::class, 'completedTasks'])->name('Complete.index');
+
+Route::get('/Complete', [TaskController::class, 'completedTasks'])->name('Complete.index'); //完了タスク一覧画面
+
 

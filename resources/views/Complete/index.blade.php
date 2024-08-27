@@ -34,13 +34,18 @@
                                                 <div class="task-item mb-4">
                                                     <h5 class="card-title">タイトル : {{ $task->name }}</h5>
                                                     <p class="card-text">内容 : {{ $task->description }}</p>
-
+                                                    @if (Auth::user()->id == $task->user_id)
+                                                    <form action='{{ route('posts.destroy',$task->id) }}' method='post'>
+                                                    @csrf
+                                                    @method('delete')
+                                                        <input type='submit' value='Delete' class="btn btn-danger" onclick='return confirm("お前に教えることはもう何もない...");'>
+                                                    </form>
+                                                    @endif
                                                     @if($task->image)
                                                         <div class="image mt-3">
                                                             <img src="{{ Storage::url('images/' . $task->image) }}" alt="" class="thumbnail">
                                                         </div>
                                                     @endif
-
                                                     <div class="card-footer text-muted">
                                                         完了日時 : {{ $task->updated_at }} 
                                                     </div>

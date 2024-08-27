@@ -19,7 +19,7 @@
                     <p>目標: {{ $goal->goal_body }}</p>
                     {{-- <p>作成時間: {{ $goal->created_at }}</p> --}}
 
-                    <a href="{{ route('goals.edit', $goal->id) }}" class="btn btn-secondary">Edit</a>
+                    <a href="{{ route('goalsprofile.edit', $goal->id) }}" class="btn btn-secondary">Edit</a>
                     {{-- <form action="{{ route('goals.destroy', $goal->id) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
