@@ -23,12 +23,9 @@ class StudyTimeController extends Controller
 
         $StudyTime->save();
 
-<<<<<<< Updated upstream
+
         return redirect()->route('posts.index')->with('success', '学習時間が記録されました。');
-=======
-        return redirect()->route('posts.index');
-        // return redirect()->route('mypage');
->>>>>>> Stashed changes
+
     }
 }
 
