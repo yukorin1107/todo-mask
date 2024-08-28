@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -61,4 +63,26 @@ class User extends Authenticatable
     {
         return $this -> hasMany('App\Models\Task');
     }
+    
+    //連続ログイン日数を計算するメソッド
+    public function getConsecutiveLoginDays()
+{
+    $loginRecords = LoginRecord::where('user_id', $this->id)
+        ->orderBy('login_at', 'desc')
+        ->pluck('login_at');
+
+    $consecutiveDays = 1;
+    $currentDate = Carbon::today();
+    
+    foreach ($loginRecords as $record) {
+        if ($record->toDateString() === $currentDate->toDateString()) {
+            $consecutiveDays++;
+            $currentDate = $currentDate->subDay();
+        } else {
+            break;
+        }
+    }
+    
+    return $consecutiveDays;
+}
 }

@@ -39,6 +39,7 @@ class StudyTimeController extends Controller
 
     }
 
+
     // private function shouldCompleteTask(Task $task, StudyTime $studyTime)
     // {
     //     タスク完了の条件を定義

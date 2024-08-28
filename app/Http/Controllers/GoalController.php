@@ -40,7 +40,13 @@ class GoalController extends Controller
         $goal->user_id = Auth::id();
         $goal->save();
 
-        return redirect()->route('FirstTask.create');
+        return redirect()->route('goals.confirmation', $goal->id);
+    }
+
+    public function confirmation($id)
+    {
+        $goal = Goal::find($id);
+        return view('goals.confirmation', ['goal' => $goal]);
     }
 
     public function showMypage()
@@ -66,9 +72,53 @@ class GoalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $request->validate([
-        //     'goal_body' => 'required|string|max:255',
-        // ]);
+
+        $goal =Goal::find($id);
+
+        $goal -> goal_body = $request ->goal_body;
+        $goal -> save();
+
+        return redirect()->route('goals.confirmation', $goal->id);
+    }
+
+    // public function update(Request $request, $id)
+    // {
+    //     // Optionally, validate the input if needed
+    //     // $request->validate([
+    //     //     'goal_body' => 'required|string|max:255',
+    //     // ]);
+    
+    //     // Find the goal by ID
+    //     $goal = Goal::find($id);
+    
+    //     // Update the goal_body field with the data from the request
+    //     $goal->goal_body = $request->goal_body;
+    //     $goal->save();
+    
+    //     // Get the previous URL
+    //     $previousUrl = url()->previous();
+    
+    //     // Conditional redirection based on the previous page
+    //     if (strpos($previousUrl, route('mypages.mypage')) !== false) {
+    //         // If the previous page is mypages.mypage, redirect back there
+    //         return redirect()->route('mypages.mypage');
+    //     } elseif (strpos($previousUrl, route('goals.edit', $id)) !== false || strpos($previousUrl, route('goals.confirmation', $id)) !== false) {
+    //         // If the previous page is goals.edit or goals.confirmation, redirect to goals.confirmation
+    //         return redirect()->route('goals.confirmation', $id);
+    //     } else {
+    //         // Fallback redirect (optional, in case the previous URL does not match any conditions)
+    //         return redirect()->route('goals.index'); // or any other default route
+    //     }
+    // }
+
+    public function editGoalProfile($id)
+    {
+        $goal = Goal::find($id);
+        return view('goals.edit-profile', ['goal' => $goal]);
+    }
+
+    public function updateGoalProfile(Request $request, $id)
+    {
 
         $goal =Goal::find($id);
 
@@ -77,6 +127,12 @@ class GoalController extends Controller
 
         return redirect()->route('mypages.mypage');
     }
+
+    
+    
+
+
+
 
     /**
      * Remove the specified resource from storage.
