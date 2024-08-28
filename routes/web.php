@@ -46,6 +46,8 @@ Route::post('post/{task}/bookmarks',[BookmarkController::class, 'store'])->name(
 
 Route::delete('post/{task}/unbookmarks',[BookmarkController::class, 'destroy'])->name('unbookmark');
 
+// Route::get('/posts/incomplete-by-type', [TaskController::class, 'showIncompleteTasksByType'])->name('posts.incomplete-by-type'); 
+
 //メモが作成できるようにcreateアクション
 Route::get('/notes/create/{task_id}', [NoteController::class, 'create']) -> name('notes.create');
 
@@ -85,5 +87,6 @@ Route::post('/StudyTime',[StudyTimeController::class, 'store'])->name('StudyTime
 
 
 Route::get('/Complete', [TaskController::class, 'completedTasks'])->name('Complete.index'); //完了タスク一覧画面
+
 
 
