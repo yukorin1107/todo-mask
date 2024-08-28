@@ -1,0 +1,50 @@
+.thumbnail {
+    width: 100px;
+    height: 100px;
+}
+
+.col-md-12 {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.my-button {
+    position: fixed;
+    top: 80px;
+    right: 30px;
+}
+
+
+@media screen and (min-width: 780px) {
+    .my-button {
+        top: 130px;
+        right: 300px;
+        position: absolute;
+    }
+}
+
+
+.button-complete {
+    margin: 10px 5px; 
+}
+
+@media screen and (min-width: 780px) {
+    .button-complete {
+        position: relative;
+        bottom: 10px;
+        left: 225px;
+    }
+}
+
+.button-new {
+    margin: 10px 5px;
+}
+
+@media screen and (min-width: 780px) {
+    .button-new {
+        position: relative;
+        bottom: 10px;
+        right: 225px;
+    } 
+}
