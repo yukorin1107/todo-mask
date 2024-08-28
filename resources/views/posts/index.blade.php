@@ -98,17 +98,12 @@
         </div>
       </div>
       <div class="col-md-12 d-flex justify-content-between align-items-center">
-        <!-- マイページボタン（右上） -->
         <a href="{{ route('mypages.mypage') }}" class="btn btn-primary my-button">
             マイページへ
         </a>
-
-        <!-- 完了一覧画面へボタン（左側） -->
         <a href="{{ route('Complete.index') }}" class="btn btn-primary button-complete mb-2 mb-md-0">
             完了一覧画面へ
         </a>
-    
-        <!-- 新規投稿ボタン（右側） -->
         <a href="{{ route('posts.create') }}" class="btn btn-primary button-new mb-2 mb-md-0">
             新規投稿
         </a>

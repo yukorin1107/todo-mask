@@ -1,4 +1,7 @@
 @extends('layouts.app')
+<head>
+    <link rel="stylesheet" href="{{ asset('css/posts.create.css') }}">
+</head>
 @section('content')
     
 <div class="container mt-5">
@@ -37,7 +40,7 @@
                 </div>               
 
                 <button type="submit" class="btn btn-primary">作成</button>
-                
+                <a href="{{ route('posts.index') }}" class="btn btn-primary back-button">戻る</a>
 
             </form>
         </div>
