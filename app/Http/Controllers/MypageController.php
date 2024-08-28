@@ -14,12 +14,12 @@ class MypageController extends Controller
     $user = Auth::user();//現在のユーザーを取得
     $goals = Goal::where('user_id', Auth::id())->get();//現在のユーザーの目標を取得
 
-    $consecutiveLoginDays = $user->getConsecutiveLoginDays();;//連続ログイン日数を取得
+    $consecutiveLoginDays = $user->getConsecutiveLoginDays();//連続ログイン日数を取得
 
     $StudyTime = StudyTime::where('user_id', Auth::id())->sum('study_time');//現在のユーザーの学習時間の合計を取得
     
 
-    return view('mypages.mypage', compact('goals', 'StudyTime', 'consecutiveLoginDays'));
+    return view('mypages.mypage', compact('goals', 'StudyTime', 'consecutiveLoginDays','user'));
 }
     public function updateProfileImage(Request $request)
 {
@@ -37,9 +37,6 @@ class MypageController extends Controller
 
     return redirect()->route('mypages.mypage')->with('success', 'プロフィール画像を更新しました。');
 }
-
-
-
 
 }
 
