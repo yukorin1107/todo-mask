@@ -66,15 +66,16 @@ class User extends Authenticatable
     
     //連続ログイン日数を計算するメソッド
     public function getConsecutiveLoginDays()
-{
+    {
     $loginRecords = LoginRecord::where('user_id', $this->id)
         ->orderBy('login_at', 'desc')
         ->pluck('login_at');
 
-    $consecutiveDays = 1;
+    $consecutiveDays = 1; // 連続ログインの初期値を1に設定
     $currentDate = Carbon::today();
     
     foreach ($loginRecords as $record) {
+        $record = Carbon::parse($record);  // 文字列をCarbonインスタンスに変換
         if ($record->toDateString() === $currentDate->toDateString()) {
             $consecutiveDays++;
             $currentDate = $currentDate->subDay();
@@ -84,5 +85,5 @@ class User extends Authenticatable
     }
     
     return $consecutiveDays;
-}
+    }
 }
