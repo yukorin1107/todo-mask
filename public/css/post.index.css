@@ -48,3 +48,58 @@
         right: 225px;
     } 
 }
+
+#task-name{
+    display: flex;
+}
+
+#task-name h5{
+    font-size: 25px;
+}
+
+/* #checkbox{
+    width: 33px;
+    height: 33px;
+    margin-right: 3px;
+    transition: all 0.3s ease;
+}
+
+
+#checkbox:hover {
+    content: url('../img/Post.index/check.png'); 
+} */
+
+
+#star-blank{
+    width: 33px;
+    height: 33px;
+    margin-right: 3px;
+    background-color: none !important;
+    border: none !important;
+    transition: all 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+
+.star-design {
+    background: none !important; /* Removes the background color */
+    border: none !important; /* Removes the border */
+    padding: 0; /* Removes any padding */
+    margin: 0; /* Removes any margin */
+    cursor: pointer; /* Changes the cursor to a pointer when hovering */
+}
+
+.star-img {
+    width: 33px;
+    height: 33px;
+    margin-right: 3px;
+    transition: all 0.3s ease; /* Adds a smooth transition for hover effect */
+}
+
+#star-blank:hover {
+    content: url('../img/Post.index/star.png'); /* Changes the image on hover */
+}
+
+/* #star:hover {
+    content: url('../img/Post.index/star-blank.png'); 
+} */
+
