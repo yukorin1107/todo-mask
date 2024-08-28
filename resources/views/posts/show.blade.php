@@ -1,7 +1,14 @@
 @extends('layouts.app')
+<head><link rel="stylesheet" href="{{ asset('css/post.show.css') }}"></head>
 @section('content') 
 
   <div class="container">
+    <a href="{{ route('posts.index') }}" class="btn btn-primary task-button">
+      タスク一覧へ
+    </a>
+    <a href="{{ route('mypages.mypage') }}" class="btn btn-primary my-button">
+      マイページへ
+    </a>
       <div class="row justify-content-center">
           <div class="col-md-8">
               <div class="card mt-3">
