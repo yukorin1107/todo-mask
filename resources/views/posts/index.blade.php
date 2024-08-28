@@ -130,7 +130,7 @@
 
 
 
-  <script>
+  {{-- <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Get all accordion buttons
       const accordionButtons = document.querySelectorAll('.accordion-button');
@@ -152,6 +152,40 @@
           const targetId = this.getAttribute('data-bs-target').substring(1); // Get the ID of the target accordion section
           localStorage.setItem('activeAccordion', targetId); // Store the ID of the target section in localStorage
         });
+      });
+    });
+  </script> --}}
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get all accordion buttons
+      const accordionButtons = document.querySelectorAll('.accordion-button');
+    
+      // Restore accordion state from localStorage (if any)
+      const activeAccordion = localStorage.getItem('activeAccordion');
+      if (activeAccordion) {
+        const collapseElement = document.getElementById(activeAccordion);
+        if (collapseElement) {
+          collapseElement.classList.add('show'); // Open the accordion
+          collapseElement.previousElementSibling.querySelector('.accordion-button').classList.remove('collapsed'); // Make sure the button is active
+          collapseElement.previousElementSibling.querySelector('.accordion-button').setAttribute('aria-expanded', 'true'); // Set aria-expanded to true
+        }
+      }
+    
+      // Add event listeners to all accordion buttons
+      accordionButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const targetId = this.getAttribute('data-bs-target').substring(1); // Get the ID of the target accordion section
+          localStorage.setItem('activeAccordion', targetId); // Store the ID of the target section in localStorage
+        });
+      });
+    
+      // Clear localStorage only when navigating away, not on bookmark button clicks
+      window.addEventListener('beforeunload', function(event) {
+        if (!event.target.activeElement.closest('form')) {
+          localStorage.removeItem('activeAccordion');
+        }
       });
     });
   </script>
