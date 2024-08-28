@@ -1,13 +1,7 @@
-<style>
-  .thumbnail {
-    width: 100px;
-    height: 100px;
-  }
-</style>
-
 @extends('layouts.app')
-
+<head><link rel="stylesheet" href="{{ asset('css/post.index.css') }}"></head>
 @section('content') 
+
   <div class="container mt-5">
     <div class="row justify-content-center">
       <div class="col-md-8">
@@ -103,19 +97,22 @@
           </div>
         </div>
       </div>
-      <div class="col-md-12">
+      <div class="col-md-12 d-flex justify-content-between align-items-center">
         <!-- マイページボタン（右上） -->
-        <a href="{{ route('mypages.mypage') }}" class="btn btn-primary" style="position: fixed; top: 140px; right: 290px;">
+        <a href="{{ route('mypages.mypage') }}" class="btn btn-primary my-button">
             マイページへ
         </a>
-        <a href="{{ route('Complete.index') }}" class="btn btn-primary" style="position: fixed; bottom: 10px; left: 250px;">
-          完了一覧画面へ
+
+        <!-- 完了一覧画面へボタン（左側） -->
+        <a href="{{ route('Complete.index') }}" class="btn btn-primary button-complete mb-2 mb-md-0">
+            完了一覧画面へ
         </a>
-        <!-- 新規投稿ボタン（右下） -->
-        <a href="{{ route('posts.create') }}" class="btn btn-primary" style="position: fixed; bottom: 10px; right: 290px;">
+    
+        <!-- 新規投稿ボタン（右側） -->
+        <a href="{{ route('posts.create') }}" class="btn btn-primary button-new mb-2 mb-md-0">
             新規投稿
         </a>
-    </div>
+    </div>    
     </div>
   </div>
 @endsection
