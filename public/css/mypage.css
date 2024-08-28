@@ -1,0 +1,111 @@
+
+.top{    
+    display: flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    /* background-color :#e3eef9;
+    width:100vw */
+
+}
+
+.profile-image{
+    display: flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    background-color :#e3eef9;
+    width:100vw;
+    height:35vh;
+}
+
+.form-group{
+    /* display: flex;
+    justify-content: flex-end; */
+    background-color : #e3eef9;
+    width:100vw
+}
+
+.login-streak {
+    padding: 0.2em 0.5em;
+    margin: 2em 0;
+    color: #565656;
+    background: white;
+    box-shadow: 0px 0px 0px 10px white;
+    border: dashed 2px rgb(102, 98, 98);
+    border-radius: 8px;
+}
+
+.box-title{
+    color: #565656;
+    font-size: 25px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.box-title img{
+    width: 23px;
+    height: 23px;
+}
+
+
+.goals {
+    padding: 0.2em 0.5em;
+    margin: 12px 0;
+    color: #565656;
+    background:white;
+    box-shadow: 0px 0px 0px 10px white;
+    border: dashed 2px rgb(102, 98, 98);
+    border-radius: 8px;
+}
+.goals p {
+    margin: 0; 
+    padding: 0;
+    font-size: 20px;
+}
+
+.username h2{
+    font-size: 35px;
+    padding-bottom: 30px;
+}
+
+
+
+.study-time {
+    padding: 0.2em 0.5em;
+    margin: 2em 0;
+    color: #565656;
+    background: white;
+    box-shadow: 0px 0px 0px 10px white;
+    border: dashed 2px rgb(102, 98, 98);
+    border-radius: 8px;
+}
+
+.goals img{
+    width: 35px;
+    height: 35px;
+}
+
+.kiroku{
+    display: flex;
+    flex-direction:row;
+    justify-content:space-between;
+    
+}
+
+.login-streak img {
+    width: 35px;
+    height: 35px;
+    padding-right: 3px;
+}
+
+.study-time img {
+    width: 30px;
+    height: 30px;
+}
+
+p{
+    color:gray;
+    font-size: 15px;
+
+}
