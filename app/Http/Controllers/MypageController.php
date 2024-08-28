@@ -21,10 +21,23 @@ class MypageController extends Controller
 
     return view('mypages.mypage', compact('goals', 'StudyTime', 'consecutiveLoginDays'));
 }
+    public function updateProfileImage(Request $request)
+{
+    $request->validate([
+        'profile_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ]);
 
- 
-    // $loginStreak = LoginStreak::where('user_id', Auth::id())->first()->streak ?? 0;
-    // $studyTime = StudyTime::where('user_id', Auth::id())->sum('hour');
+    $user = Auth::user();
+    if ($request->file('profile_image')) {
+        $imageName = time().'.'.$request->profile_image->extension();
+        $request->profile_image->move(public_path('images'), $imageName);
+        $user->profile_image = $imageName;
+        $user->save();
+    }
+
+    return redirect()->route('mypages.mypage')->with('success', 'プロフィール画像を更新しました。');
+}
+
 
 
 
