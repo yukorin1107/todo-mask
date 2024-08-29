@@ -11,3 +11,16 @@
 .my-button {
     margin: 0;
 }
+
+#edit-delete{
+    display: flex;
+    flex-direction: row;
+}
+
+.button-edit-design{
+    height: 39px !important;
+}
+
+.button-note-design{
+    margin-top: 10px;
+}
