@@ -84,7 +84,7 @@
                     <form action='{{ route('posts.destroy',$task->id) }}' method='post'>
                       @csrf
                       @method('delete')
-                        <input type='submit' value='削除' class="btn btn-danger" onclick='return confirm("本当に削除しますか？");'>
+                        <input type='submit' value='削除' class="btn btn-danger button-delete-design" onclick='return confirm("本当に削除しますか？");'>
                     </form>
                     @endif
 
@@ -101,7 +101,7 @@
           {{-- <button type="button" class="btn btn-primary" onclick="window.location='{{ route('notes.create', $task->id) }}'">メモを追加</button> --}}
 
           <div class="col-md-8 mt-5">
-            メモ一覧
+            <p id="note-header">--- メモ一覧 ---</p>
             @foreach($task->notes as $note)
               <div class="card mt-3">
                   {{-- <h5 class="card-header">投稿者：{{ $note->user->name }}</h5> --}}
@@ -114,9 +114,11 @@
           </div>
 
           <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary button-note-design" data-bs-toggle="modal" data-bs-target="#exampleModalMemo">
-            メモを追加
-          </button> 
+          <div id="note-button-parent">
+            <button type="button" class="btn btn-primary button-note-design" data-bs-toggle="modal" data-bs-target="#exampleModalMemo">
+              メモを追加
+            </button> 
+          </div>
 
           <!-- Modal -->
           <div class="modal fade" id="exampleModalMemo" tabindex="-1" aria-labelledby="exampleModalMemoLabel" aria-hidden="true">

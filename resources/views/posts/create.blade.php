@@ -10,12 +10,12 @@
             <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <label>タイトル</label>
-                    <input type="text" class="form-control" placeholder="タイトルを入力して下さい" name="name" required>
+                    <label>TASK</label>
+                    <input type="text" class="form-control" placeholder="タスクを入力してね" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label>内容</label>
-                    <textarea class="form-control" placeholder="内容" rows="5" maxlength="140" name="description" required>
+                    <label>詳細</label>
+                    <textarea class="form-control" placeholder="具体的な方法を記入しよう" rows="5" maxlength="140" name="description" required>
                     </textarea>
                     {{-- @if ($errors->has('description'))
                     <span class="text-danger">{{ $errors->first('description') }}</span>
@@ -25,7 +25,7 @@
                 <div class="form-group">
                     <label for="type">タスクの種類</label>
                     <select name="type" id="type" class="form-control" required>
-                        <option value="" disabled selected>タスクの種類を選んでください</option>
+                        <option value="" disabled selected > タスクの種類を選んでください </option>
                         <option value="Reading">Reading</option>
                         <option value="Listening">Listening</option>
                         <option value="Speaking">Speaking</option>
@@ -39,8 +39,8 @@
                     <input type="file" class="form-control-file" name='image' id='image'>
                 </div>               
 
-                <button type="submit" class="btn btn-primary">作成</button>
-                <a href="{{ route('posts.index') }}" class="btn btn-primary back-button">戻る</a>
+                <a href="{{ route('posts.index') }}" class="btn btn-primary back-button button-design">戻る</a>
+                <button type="submit" class="btn btn-primary create-button button-design">作成</button>
 
             </form>
         </div>
