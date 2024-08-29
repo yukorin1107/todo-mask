@@ -9,6 +9,10 @@
 
 }
 
+.top h1{
+    font-size: 45px;
+}
+
 .profile-image{
     display: flex;
     flex-direction:row;
@@ -29,6 +33,8 @@
 .login-streak {
     padding: 0.2em 0.5em;
     margin: 2em 0;
+    width:42vw;
+    height:auto;
     color: #565656;
     background: white;
     box-shadow: 0px 0px 0px 10px white;
@@ -74,6 +80,8 @@
 .study-time {
     padding: 0.2em 0.5em;
     margin: 2em 0;
+    width:45vw;
+    height:12vh;
     color: #565656;
     background: white;
     box-shadow: 0px 0px 0px 10px white;

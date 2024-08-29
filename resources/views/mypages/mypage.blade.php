@@ -45,7 +45,8 @@
     <div class=kiroku>
 
         <div class="login-streak">
-        <h2><img src="{{  asset('img/mypage/炎.png') }}" alt=""> {{ $consecutiveLoginDays }} 日</h2> 
+        <h2><img src="{{  asset('img/mypage/炎.png') }}" alt=""> {{ $consecutiveLoginDays }}日</h2> 
+
         <p>連続ログイン履歴</p>
         </div> 
 
