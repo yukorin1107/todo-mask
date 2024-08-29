@@ -77,5 +77,7 @@ Route::get('/mypages', [MypageController::class, 'index'])->name('mypages.mypage
 Route::get('/StudyTime/create',[StudyTimeController::class, 'create'])->name('StudyTime.create');//勉強時間の作成
 Route::post('/StudyTime',[StudyTimeController::class, 'store'])->name('StudyTime.store');//勉強時間の保存
 Route::get('/Complete', [TaskController::class, 'completedTasks'])->name('Complete.index'); //完了タスク一覧画面
-Route::post('/mypages/profile-image', [MypageController::class, 'updateProfileImage'])->name('profile.image.update');
+Route::post('/mypages/profile-image', [MypageController::class, 'updateProfileImage'])->name('profile.image.update');//プロフィール画像の編集
+Route::post('/mypages/profile-image/delete', [MypageController::class, 'deleteProfileImage'])->name('profile.image.delete');//プロフィール画像の削除
+
 

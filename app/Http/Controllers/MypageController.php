@@ -38,5 +38,23 @@ class MypageController extends Controller
     return redirect()->route('mypages.mypage')->with('success', 'プロフィール画像を更新しました。');
 }
 
+    public function deleteProfileImage(Request $request)
+{
+    $user = Auth::user();
+
+    // ユーザーがカスタムのプロフィール画像を持っているか確認
+    if ($user->profile_image && file_exists(public_path('images/' . $user->profile_image))) {
+        // サーバーから画像ファイルを削除
+        unlink(public_path('images/' . $user->profile_image));
+    }
+
+    // プロフィール画像をデフォルトにリセット
+    $user->profile_image = null;
+    $user->save();
+
+    return redirect()->route('mypages.mypage')->with('success', 'プロフィール画像が削除されました。');
+}
+
+
 }
 

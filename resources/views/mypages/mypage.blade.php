@@ -10,17 +10,23 @@
     </div>
 
 <div class="profile-image">
-        <img src="{{ Auth::user()->profile_image ? asset('images/' . Auth::user()->profile_image) : asset('img/mypage/default-profile.png') }}" alt="プロフィール画像" style="width:150px; height:150px; border-radius:50%;">
+        <img src="{{ Auth::user()->profile_image ? asset('images/' . Auth::user()->profile_image) : asset('img/mypage/default-profile.png') }}" alt="プロフィール画像" style="width:220px; height:220px; border-radius:50%;">
 </div>
 
     <form action="{{ route('profile.image.update') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
-            <label for="profile_image">プロフィール画像変更</label>
+            <label for="profile_image">画像変更</label>
             <input type="file" class="form-control-file" id="profile_image" name="profile_image">
         </div>
         <button type="submit" class="btn btn-primary">更新</button>
     </form>
+    <form action="{{ route('profile.image.delete') }}" method="POST" style="display:inline;">
+        @csrf
+        <button type="submit" class="btn btn-danger">削除</button>
+    </form>
+    
+
         <div class="username">
             <h2>{{ $user->name }}</h2>
         </div>
