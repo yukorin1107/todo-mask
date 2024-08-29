@@ -43,7 +43,7 @@
                                 <div class="col-md-8">
                                     @if (Auth::user()->id === $goal->user_id)
                                         <!-- フォームの開始 -->
-                                        <form action="{{ route('goalsprofile.update', $goal->id) }}" method="POST">
+                                        <form action="{{ route('goals.update', $goal->id) }}" method="POST">
                                             @csrf
                                             @method('put')
                         
