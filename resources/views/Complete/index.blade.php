@@ -12,7 +12,7 @@
                     タスク一覧へ
                 </a>
             </div>
-            <h1 class="display-3 text-white bg-dark font-weight-bolder text-uppercase text-center p-4 shadow-lg m-0">
+            <h1 class="display-3 text-white bg-dark font-weight-bolder text-uppercase text-center p-4 shadow-lg m-0 achieve">
                 よくぞ試練を乗り越えた。<br>お主はもっと強くなれる。
             </h1>
             <div class="card text-center mt-4">

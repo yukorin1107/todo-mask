@@ -2,3 +2,13 @@
     width: 100px;
     height: 100px;
 }
+
+.achieve {
+    font-size: 25px !important;
+}
+
+@media screen and (min-width:780px) {
+    .achieve {
+        font-size: 65px !important;
+    }
+}
