@@ -13,4 +13,16 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    min-height: 100vh; /* Ensure the body covers at least the full viewport height */
+    /* display: flex; */
 }
+
+input::placeholder {
+    color: gray !important; /* Change this to your desired color */
+    opacity: 1; /* Optional: Ensures the color is fully opaque */
+}
+textarea::placeholder {
+    color: gray !important; /* Change this to your desired color */
+    opacity: 1; /* Optional: Ensures the color is fully opaque */
+}
+

@@ -15,8 +15,7 @@
                 </div>
                 <div class="form-group">
                     <label>詳細</label>
-                    <textarea class="form-control" placeholder="具体的な方法を記入しよう" rows="5" maxlength="140" name="description" required>
-                    </textarea>
+                    <textarea class="form-control" placeholder="具体的な方法を記入しよう" rows="5" maxlength="140" name="description" required></textarea>
                     {{-- @if ($errors->has('description'))
                     <span class="text-danger">{{ $errors->first('description') }}</span>
                     @endif --}}
@@ -25,7 +24,7 @@
                 <div class="form-group">
                     <label for="type">タスクの種類</label>
                     <select name="type" id="type" class="form-control" required>
-                        <option value="" disabled selected > タスクの種類を選んでください </option>
+                        <option value="" selected style="color: gray;"> タスクの種類を選んでください </option>
                         <option value="Reading">Reading</option>
                         <option value="Listening">Listening</option>
                         <option value="Speaking">Speaking</option>
@@ -46,4 +45,22 @@
         </div>
     </div>
 </div>
+
+<script>
+    //タスク種類選択の文字を灰色にするJS
+    document.addEventListener('DOMContentLoaded', function() {
+        const selectElement = document.getElementById('type');
+        selectElement.style.color = 'gray'; // Set initial color for placeholder option
+    
+        selectElement.addEventListener('change', function() {
+            // Change color to black or your desired color when a different option is selected
+            if (this.value === '') {
+                this.style.color = 'gray'; // Keep gray color for default option
+            } else {
+                this.style.color = 'black'; // Change to black or another color for selected options
+            }
+        });
+    });
+</script>
+
 @endsection
