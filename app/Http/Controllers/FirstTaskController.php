@@ -27,6 +27,7 @@ public function store(Request $request) {
     $task = new Task();
     $task->name = $request->name;
     $task->description = $request->description;
+    $task->type = $request->type;
     $task->user_id = Auth::id();
 
     if(request('image')){
@@ -38,6 +39,14 @@ public function store(Request $request) {
 
     $task->save();
 
-    return redirect()->route('posts.index');
+    return redirect()->route('FirstTask.laststep');
 }
+
+public function laststep()
+{
+    return view('FirstTask.laststep');
 }
+
+
+}
+

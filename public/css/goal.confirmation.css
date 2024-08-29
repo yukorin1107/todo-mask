@@ -1,0 +1,84 @@
+#goal-setting{
+    /* padding: 0.2em 0.5em; */
+    padding-top: 20px;
+    padding-bottom: 25px;
+    margin: 2em 0;
+    width:80%;
+    height:auto;
+    color: #565656;
+    background: white;
+    box-shadow: 0px 0px 0px 10px white;
+    border: dashed 2px rgb(102, 98, 98);
+    border-radius: 8px;
+}
+
+#goal-parent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center !important;
+    height: 80vh;
+    /* overflow: hidden; */
+}
+
+#goal-description{
+    text-align: center;
+    padding: 0;
+    margin: 5px;
+}
+
+#goal{
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+#compliment{
+    text-align: center;
+}
+
+#edit-button-parent{
+    /* display: flex;
+    justify-content: right; */
+    padding-right: 25%;
+}
+
+#next-button-parent{
+    padding-left: 25%;
+}
+
+.edit-button{
+    background-color: gray !important;
+    border: gray 1px solid;
+
+}
+
+#buttons{
+    display: flex;
+    justify-content: center;
+}
+
+#update-button-parent{
+    display: flex;
+    justify-content: right;
+    margin-left: 5px;
+}
+
+#edit-description{
+    color: gray;
+    font-size: smaller;
+}
+
+.box-title{
+    color: #565656;
+    font-size: 25px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.box-title img{
+    width: 23px;
+    height: 23px;
+}

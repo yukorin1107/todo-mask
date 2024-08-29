@@ -1,28 +1,58 @@
-.thumbnail {
+/* .thumbnail {
     width: 100px;
     height: 100px;
-}
+} */
 
-.col-md-12 {
+/* .col-md-12 {
     display: flex;
     justify-content: space-between; 
     align-items: center;
+} */
+
+
+/* Override margin for the card */
+.card.text-center {
+    margin-top: 0 !important; /* Remove the top margin */
+    margin-bottom: 0 !important; /* Remove the bottom margin if needed */
 }
+
+/* Remove margin from parent container if necessary */
+.container, .row, .col-md-8 {
+    margin-top: 0 !important; /* Remove any extra top margin */
+    padding-top: 0 !important; /* Remove any extra top padding */
+}
+
+
+
 
 .my-button {
-    position: fixed;
-    top: 80px;
-    right: 30px;
+    background-color: palevioletred !important;
+    border: palevioletred solid 1px !important;
 }
 
+#mypage-parent{
+    display: flex;
+    justify-content: right;
+    margin-bottom: 10px;
+}
 
-@media screen and (min-width: 780px) {
+#button-parent{
+    display: flex;
+    justify-content: center;
+}
+
+.complete-button{
+    background-color: gray !important;
+    border: gray 1px solid !important;
+}
+
+/* @media screen and (min-width: 780px) {
     .my-button {
         top: 130px;
         right: 300px;
         position: absolute;
     }
-}
+} */
 
 
 .button-complete {

@@ -49,6 +49,11 @@ class GoalController extends Controller
         return view('goals.confirmation', ['goal' => $goal]);
     }
 
+    // public function laststep()
+    // {
+    //     return view('FirstTask.laststep');
+    // }
+
     public function showMypage()
     {
     // ログインしているユーザーの目標を1つ取得

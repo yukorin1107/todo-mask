@@ -5,6 +5,11 @@
   <div class="container mt-5">
     <div class="row justify-content-center">
       <div class="col-md-8">
+      <div id="mypage-parent">
+        <a href="{{ route('mypages.mypage') }}" class="btn btn-primary my-button">
+            マイページへ
+        </a>
+      </div>
         <div class="card text-center">
           <div class="card-header">
             タスク一覧
@@ -114,47 +119,22 @@
           </div>
         </div>
       </div>
-      <div class="col-md-12 d-flex justify-content-between align-items-center">
-        <a href="{{ route('mypages.mypage') }}" class="btn btn-primary my-button">
-            マイページへ
-        </a>
-        <a href="{{ route('Complete.index') }}" class="btn btn-primary button-complete mb-2 mb-md-0">
-            完了一覧画面へ
-        </a>
-        <a href="{{ route('posts.create') }}" class="btn btn-primary button-new mb-2 mb-md-0">
-            新規投稿
-        </a>
-    </div>    
+      {{-- <div class="col-md-12 d-flex justify-content-between align-items-center"> --}}
+        <div id="button-parent">
+          <div>
+            <a href="{{ route('Complete.index') }}" class="btn btn-primary button-complete mb-2 mb-md-0 complete-button">
+                完了一覧画面へ
+            </a>
+          </div>
+          <div>
+            <a href="{{ route('posts.create') }}" class="btn btn-primary button-new mb-2 mb-md-0">
+                新規投稿
+            </a>
+          </div>
+        </div>
+      {{-- </div>     --}}
     </div>
   </div>
-
-
-
-  {{-- <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Get all accordion buttons
-      const accordionButtons = document.querySelectorAll('.accordion-button');
-    
-      // Restore accordion state from localStorage
-      const activeAccordion = localStorage.getItem('activeAccordion');
-      if (activeAccordion) {
-        const collapseElement = document.getElementById(activeAccordion);
-        if (collapseElement) {
-          collapseElement.classList.add('show'); // Open the accordion
-          collapseElement.previousElementSibling.querySelector('.accordion-button').classList.remove('collapsed'); // Make sure the button is active
-          collapseElement.previousElementSibling.querySelector('.accordion-button').setAttribute('aria-expanded', 'true'); // Set aria-expanded to true
-        }
-      }
-    
-      // Add event listeners to all accordion buttons
-      accordionButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          const targetId = this.getAttribute('data-bs-target').substring(1); // Get the ID of the target accordion section
-          localStorage.setItem('activeAccordion', targetId); // Store the ID of the target section in localStorage
-        });
-      });
-    });
-  </script> --}}
 
 
   <script>

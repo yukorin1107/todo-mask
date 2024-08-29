@@ -73,6 +73,8 @@ Route::get('/goals', function() {
 
 
 Route::get('/FirstTask/create',[FirstTaskController::class, 'create'])->name('FirstTask.create');//最初の投稿
+Route::post('/FirstTask',[FirstTaskController::class, 'store'])->name('FirstTask.store');//新規投稿画面
+Route::get('/FirstTask/laststep',[FirstTaskController::class, 'laststep'])->name('FirstTask.laststep');//最初の投稿の次の画面
 Route::get('/mypages', [MypageController::class, 'index'])->name('mypages.mypage');
 Route::get('/StudyTime/create',[StudyTimeController::class, 'create'])->name('StudyTime.create');//勉強時間の作成
 Route::post('/StudyTime',[StudyTimeController::class, 'store'])->name('StudyTime.store');//勉強時間の保存

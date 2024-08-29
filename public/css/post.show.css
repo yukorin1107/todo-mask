@@ -23,24 +23,28 @@
 .button-edit-design{
     height: 39px !important;
     margin-right: 5px;
-    background-color: gray !important;
-    border: 1px solid gray !important;
-}
-
-.button-edit-design:hover{
+    /* background-color: gray !important;
+    border: 1px solid gray !important; */
     background-color: lightseagreen !important;
     border: 1px solid lightseagreen !important;
 }
 
+/* .button-edit-design:hover{
+    background-color: lightseagreen !important;
+    border: 1px solid lightseagreen !important;
+} */
+
 .button-delete-design{
-    background-color: gray !important;
-    border: 1px solid gray !important;
+    /* background-color: gray !important;
+    border: 1px solid gray !important; */
+    background-color: palevioletred !important;
+    border: 1px solid palevioletred !important;
 }
 
-.button-delete-design:hover{
+/* .button-delete-design:hover{
     background-color: palevioletred !important;
-    border: 1px solid pink !important;
-}
+    border: 1px solid palevioletred !important;
+} */
 
 #note-button-parent{
     display: flex;
