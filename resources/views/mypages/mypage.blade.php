@@ -3,7 +3,14 @@
 
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/mypage.css') }}">
-
+<div class="d-flex justify-content-between mb-2 mb-md-0">
+    <a href="{{ route('posts.index') }}" class="btn btn-primary task-button">
+        タスク一覧へ
+    </a>
+    <a href="{{ route('Complete.index') }}" class="btn btn-primary button-complete">
+        完了一覧画面へ
+    </a>
+</div>
 <div class="container">
     <div class="top">
     <h1>My Page</h1>
