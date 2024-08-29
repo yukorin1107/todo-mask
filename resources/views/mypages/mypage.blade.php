@@ -65,4 +65,11 @@
         </div>
     </div>
     </div>
+    <div class="favorite">
+        <h2>お気に入り一覧</h2>
+        @foreach($bookmarkedTasks as $bookmark)
+        <p>{{ $bookmark->task->name }}</p>
+        <p>{{ $bookmark->task->description}}</p>
+        @endforeach
+    </div>
 @endsection

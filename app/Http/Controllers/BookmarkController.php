@@ -29,6 +29,7 @@ use App\Http\Controllers\Controller;
 
 class BookmarkController extends Controller
 {
+
     public function store(Task $task)  
     {
         Bookmark::create([

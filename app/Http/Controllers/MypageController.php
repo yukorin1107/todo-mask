@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Goal;
+use App\Models\Bookmark;
 use Illuminate\Support\Facades\Auth;
 use App\Models\StudyTime;
 
@@ -17,9 +18,10 @@ class MypageController extends Controller
     $consecutiveLoginDays = $user->getConsecutiveLoginDays();//連続ログイン日数を取得
 
     $StudyTime = StudyTime::where('user_id', Auth::id())->sum('study_time');//現在のユーザーの学習時間の合計を取得
+    $bookmarkedTasks = Bookmark::where('user_id', Auth::id())->with('task')->get();
     
 
-    return view('mypages.mypage', compact('goals', 'StudyTime', 'consecutiveLoginDays','user'));
+    return view('mypages.mypage', compact('goals', 'StudyTime', 'consecutiveLoginDays','user', 'bookmarkedTasks'));
 }
     public function updateProfileImage(Request $request)
 {

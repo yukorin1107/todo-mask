@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Task;
+use App\Models\Bookmark;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -119,6 +120,17 @@ class TaskController extends Controller
         $completedTasks = Task::where('user_id', Auth::id())->where('is_completed', true)->get();
         return view('Complete.index', compact('completedTasks'));
     }
+
+    public function bookmark($id)
+{
+    $bookmark = new Bookmark();
+    $bookmark->user_id = Auth::id();
+    $bookmark->task_id = $id;
+    $bookmark->save();
+
+    return redirect()->back()->with('success', 'タスクをブックマークしました。');
+}
+
 
     //taskカウント
     // public function showIncompleteTasksByType()
