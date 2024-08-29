@@ -65,11 +65,14 @@
         </div>
     </div>
     </div>
-    <div class="favorite">
-        <h2>お気に入り一覧</h2>
+    <span class="favorite-title"><img src="{{  asset('img/mypage/favorite.png') }}" alt="">お気に入り一覧</span>
+
+    <div class="favorite-list">
         @foreach($bookmarkedTasks as $bookmark)
-        <p>{{ $bookmark->task->name }}</p>
-        <p>{{ $bookmark->task->description}}</p>
+        <div class="favorite-item">
+        <p>TASK:{{ $bookmark->task->name }}</p>
+        <p>内容:{{ $bookmark->task->description}}</p>
+        </div>
         @endforeach
     </div>
 @endsection
