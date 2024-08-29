@@ -24,10 +24,14 @@
 }
 
 .form-group{
-    /* display: flex;
-    justify-content: flex-end; */
+    text-align: right;
+    margin-bottom: 20px; /* 下に余白をつける */
     background-color : #e3eef9;
     width:100vw
+}
+
+.edit {
+    text-align: right;
 }
 
 .login-streak {
@@ -40,6 +44,10 @@
     box-shadow: 0px 0px 0px 10px white;
     border: dashed 2px rgb(102, 98, 98);
     border-radius: 8px;
+}
+
+.login-streak h2 {
+    font-size: 25px;
 }
 
 .box-title{
@@ -63,11 +71,13 @@
     box-shadow: 0px 0px 0px 10px white;
     border: dashed 2px rgb(102, 98, 98);
     border-radius: 8px;
+    position: relative;
 }
 .goals p {
     margin: 0; 
     padding: 0;
     font-size: 20px;
+    color: black;
 }
 
 .username h2{
@@ -110,6 +120,8 @@
 .study-time img {
     width: 30px;
     height: 30px;
+    padding-right: 5px;
+
 }
 
 p{
@@ -124,4 +136,8 @@ p{
 
 .button-complete {
     margin-right: 20px;
+}
+
+.study-time h2 {
+    font-size: 25px;
 }
