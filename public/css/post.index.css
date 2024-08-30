@@ -133,3 +133,7 @@
     content: url('../img/Post.index/star-blank.png'); 
 } */
 
+.thumbnail {
+    width: 100px;
+    height: 100px;
+}
