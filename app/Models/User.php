@@ -71,7 +71,7 @@ class User extends Authenticatable
         ->orderBy('login_at', 'desc')
         ->pluck('login_at');
 
-    $consecutiveDays = 1; // 連続ログインの初期値を1に設定
+    $consecutiveDays = 0; // 連続ログインの初期値を1に設定
     $currentDate = Carbon::today();
     
     foreach ($loginRecords as $record) {
